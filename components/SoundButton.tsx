@@ -25,18 +25,26 @@ export default function SoundButton({ sound, title, icon }: SoundButtonProps) {
 
   return (
     <TouchableHighlight
-      style={styles.button}
+      style={styles.container}
       activeOpacity={0.6}
       underlayColor="#DDDDDD"
       onPress={onButtonPress}
     >
       <View style={styles.content}>
         {isPlaying ? (
-          <Ionicons style={styles.controls} name="ios-pause-circle" size={28} />
+          <Ionicons
+            style={styles.contentIcon}
+            name="ios-pause-circle"
+            size={28}
+          />
         ) : (
-          <Ionicons style={styles.controls} name="ios-play-circle" size={28} />
+          <Ionicons
+            style={styles.contentIcon}
+            name="ios-play-circle"
+            size={28}
+          />
         )}
-        <ImageBackground style={styles.iconContainer} source={icon} />
+        <ImageBackground style={styles.icon} source={icon} />
         <Text style={styles.text}>{title}</Text>
       </View>
     </TouchableHighlight>
@@ -44,17 +52,17 @@ export default function SoundButton({ sound, title, icon }: SoundButtonProps) {
 }
 
 const styles = StyleSheet.create({
-  iconContainer: {
+  icon: {
     height: 50,
     width: 50,
     margin: 5,
   },
-  controls: {
+  contentIcon: {
     position: 'absolute',
     right: 0,
     color: 'darkgrey',
   },
-  button: {
+  container: {
     flex: 1,
     backgroundColor: '#DDDDDD',
     padding: 20,

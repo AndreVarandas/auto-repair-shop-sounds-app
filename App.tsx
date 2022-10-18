@@ -7,8 +7,12 @@ import SoundList from './components/SoundList'
 export default function App() {
   return (
     <View style={styles.container}>
-      <ImageBackground blurRadius={3} style={styles.logo} source={repairShop}>
-        <Text style={styles.logoText}>✨ A oficina ✨</Text>
+      <ImageBackground
+        blurRadius={3}
+        style={styles.backgroundImage}
+        source={repairShop}
+      >
+        <Text style={styles.backgroundImageText}>✨ A oficina ✨</Text>
       </ImageBackground>
       <SoundList />
       <StatusBar style="inverted" />
@@ -17,11 +21,11 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  logo: {
+  backgroundImage: {
     width: '100%',
     height: 200,
   },
-  logoText: {
+  backgroundImageText: {
     color: '#ddd',
     fontSize: 28,
     fontWeight: 'bold',
