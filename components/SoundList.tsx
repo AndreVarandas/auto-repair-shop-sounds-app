@@ -10,8 +10,13 @@ export default function SoundList() {
 
   return (
     <FlatList
+      style={{ margin: 5 }}
+      numColumns={2}
       data={data}
       renderItem={renderSoundItem}
+      columnWrapperStyle={{
+        justifyContent: 'space-between',
+      }}
       keyExtractor={(item) => item.id}
     />
   )

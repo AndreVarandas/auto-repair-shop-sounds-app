@@ -1,15 +1,23 @@
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { AVPlaybackSource } from 'expo-av'
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import {
+  ImageBackground,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+} from 'react-native'
 
 import useSound from '../hooks/useSound'
 
 type SoundButtonProps = {
   sound: AVPlaybackSource
   title: string
+  icon: ImageSourcePropType
 }
 
-export default function SoundButton({ sound, title }: SoundButtonProps) {
+export default function SoundButton({ sound, title, icon }: SoundButtonProps) {
   const { playSound, stopSound, isPlaying } = useSound(sound)
   const onButtonPress = () => {
     isPlaying ? stopSound() : playSound()
@@ -24,10 +32,11 @@ export default function SoundButton({ sound, title }: SoundButtonProps) {
     >
       <View style={styles.content}>
         {isPlaying ? (
-          <Ionicons name="ios-pause-circle" size={32} />
+          <Ionicons style={styles.controls} name="ios-pause-circle" size={28} />
         ) : (
-          <Ionicons name="ios-play-circle" size={32} />
+          <Ionicons style={styles.controls} name="ios-play-circle" size={28} />
         )}
+        <ImageBackground style={styles.iconContainer} source={icon} />
         <Text style={styles.text}>{title}</Text>
       </View>
     </TouchableHighlight>
@@ -35,7 +44,18 @@ export default function SoundButton({ sound, title }: SoundButtonProps) {
 }
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    height: 50,
+    width: 50,
+    margin: 5,
+  },
+  controls: {
+    position: 'absolute',
+    right: 0,
+    color: 'darkgrey',
+  },
   button: {
+    flex: 1,
     backgroundColor: '#DDDDDD',
     padding: 20,
     margin: 5,
@@ -47,9 +67,8 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 10,
-    fontSize: 16,
+    fontSize: 14,
     lineHeight: 21,
-    fontWeight: 'bold',
     letterSpacing: 0.25,
     color: '#222',
   },

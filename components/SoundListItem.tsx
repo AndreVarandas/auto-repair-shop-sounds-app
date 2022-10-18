@@ -6,5 +6,12 @@ type SoundListItemProps = {
 }
 
 export default function SoundListItem({ item }: SoundListItemProps) {
-  return <SoundButton sound={item.sound} title={item.title} key={item.id} />
+  return (
+    <SoundButton
+      sound={item.sound}
+      title={item.title}
+      key={item.id}
+      icon={item.icon}
+    />
+  )
 }
