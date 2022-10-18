@@ -10,16 +10,17 @@ type SoundButtonProps = {
 }
 
 export default function SoundButton({ sound, title }: SoundButtonProps) {
-  const { playSound, isPlaying } = useSound(sound)
-  const onSoundPlay = () => {
-    playSound()
+  const { playSound, stopSound, isPlaying } = useSound(sound)
+  const onButtonPress = () => {
+    isPlaying ? stopSound() : playSound()
   }
+
   return (
     <TouchableHighlight
       style={styles.button}
       activeOpacity={0.6}
       underlayColor="#DDDDDD"
-      onPress={onSoundPlay}
+      onPress={onButtonPress}
     >
       <View style={styles.content}>
         {isPlaying ? (

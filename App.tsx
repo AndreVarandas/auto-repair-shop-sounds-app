@@ -11,7 +11,7 @@ export default function App() {
       <View style={styles.list}>
         <SoundList />
       </View>
-      <StatusBar style="auto" />
+      <StatusBar style="inverted" />
     </View>
   )
 }
@@ -19,7 +19,7 @@ export default function App() {
 const styles = StyleSheet.create({
   logo: {
     width: '100%',
-    height: 300,
+    height: 200,
   },
   container: {
     flex: 1,
@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
-
     margin: 10,
   },
   item: {
