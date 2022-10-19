@@ -10,7 +10,14 @@
 
 ### IOS
 
-- [Open with iOS](exp://u.expo.dev/update/55d7c348-03dd-4d91-af14-85343b9f4d5f) ([Expo Go](https://apps.apple.com/pt/app/expo-go/id982107779) must be installed on your iOS device for it to work.)
+![Expo Link](/extra/expo%20link.svg)
+
+- Open with iOS camera and then follow the link. ([Expo Go](https://apps.apple.com/pt/app/expo-go/id982107779) must be installed on your iOS device for it to work.)
+- Or, alternatively you can also use this link on your device:
+
+```sh
+exp://u.expo.dev/update/55d7c348-03dd-4d91-af14-85343b9f4d5f
+```
 
 ---
 
