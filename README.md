@@ -12,7 +12,7 @@
 
 ![Expo Link](/extra/expo%20link.svg)
 
-- Open with iOS camera and then follow the link. ([Expo Go](https://apps.apple.com/pt/app/expo-go/id982107779) must be installed on your iOS device for it to work.)
+- Open with iOS camera and then follow the link. ([Expo Go](https://apps.apple.com/app/expo-go/id982107779) must be installed on your iOS device for it to work.)
 - Or, alternatively you can also use this link on your device:
 
 ```sh
