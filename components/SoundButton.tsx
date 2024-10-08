@@ -1,3 +1,4 @@
+import useSound from '../hooks/useSound'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { AVPlaybackSource } from 'expo-av'
 import {
@@ -9,8 +10,6 @@ import {
   View,
 } from 'react-native'
 
-import useSound from '../hooks/useSound'
-
 type SoundButtonProps = {
   sound: AVPlaybackSource
   title: string
@@ -19,9 +18,7 @@ type SoundButtonProps = {
 
 export default function SoundButton({ sound, title, icon }: SoundButtonProps) {
   const { playSound, stopSound, isPlaying } = useSound(sound)
-  const onButtonPress = () => {
-    isPlaying ? stopSound() : playSound()
-  }
+  const onButtonPress = () => (isPlaying ? stopSound() : playSound())
 
   return (
     <TouchableHighlight
@@ -32,17 +29,9 @@ export default function SoundButton({ sound, title, icon }: SoundButtonProps) {
     >
       <View style={styles.content}>
         {isPlaying ? (
-          <Ionicons
-            style={styles.contentIcon}
-            name="ios-pause-circle"
-            size={28}
-          />
+          <Ionicons style={styles.contentIcon} name="pause-circle" size={28} />
         ) : (
-          <Ionicons
-            style={styles.contentIcon}
-            name="ios-play-circle"
-            size={28}
-          />
+          <Ionicons style={styles.contentIcon} name="play-circle" size={28} />
         )}
         <ImageBackground style={styles.icon} source={icon} />
         <Text style={styles.text}>{title}</Text>

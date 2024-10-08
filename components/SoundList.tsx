@@ -17,7 +17,7 @@ export default function SoundList() {
       columnWrapperStyle={{
         justifyContent: 'space-between',
       }}
-      keyExtractor={(item) => item.id}
+      keyExtractor={item => item.id}
     />
   )
 }

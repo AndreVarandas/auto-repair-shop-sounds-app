@@ -16,7 +16,7 @@ export default function useSound(audio: AVPlaybackSource) {
     const { sound } = await Sound.createAsync(
       audio,
       { shouldPlay: true },
-      updateStatus
+      updateStatus,
     )
     setSound(sound)
 
